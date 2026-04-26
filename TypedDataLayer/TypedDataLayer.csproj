@@ -1,9 +1,8 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
-    <PropertyGroup>
-    <!-- We target netcoreapp specifically because DbProviderFactories is not supported in .NET standard. -->
-	  <TargetFrameworks>netcoreapp2.1;net461</TargetFrameworks>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net481</TargetFramework>
+	</PropertyGroup>
 
 	<PropertyGroup>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
@@ -17,17 +16,11 @@
 		<Company>Sam Rueby, William Gross, Greg Smalter</Company>
 	</PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="JetBrains.Annotations" Version="10.3.0" />
-    <PackageReference Include="Microsoft.Data.SqlClient" Version="2.1.2" />
-    <PackageReference Include="MiniProfiler.AspNetCore.Mvc" Version="4.0.0" />
-    <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.7.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="System.Core">
-      <HintPath>..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\System.Core.dll</HintPath>
-    </Reference>
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="JetBrains.Annotations" Version="10.3.0" />
+		<PackageReference Include="Microsoft.Data.SqlClient" Version="6.1.4" />
+		<PackageReference Include="MiniProfiler.AspNetCore.Mvc" Version="4.0.0" />
+		<PackageReference Include="System.Configuration.ConfigurationManager" Version="8.0.1" />
+	</ItemGroup>
 
 </Project>

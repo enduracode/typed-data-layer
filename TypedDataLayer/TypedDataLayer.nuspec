@@ -13,27 +13,17 @@
 		<tags>DAL Database Data SQL O/RM ORM ADO.NET Typed EWL TypeDataLayer</tags>
 		<language>en-US</language>
 		<dependencies>
-			<group targetFramework=".NETFramework4.6.1">
+			<group targetFramework=".NETFramework4.8.1">
 				<dependency id="JetBrains.Annotations" version="10.3.0" exclude="Build,Analyzers" />
-				<dependency id="MiniProfiler.AspNetCore.Mvc" version="4.0.0" exclude="Build,Analyzers" />
-				<dependency id="System.Configuration.ConfigurationManager" version="4.7.0" exclude="Build,Analyzers" />
-				<dependency id="Microsoft.Data.SqlClient" version="2.1.2" exclude="Build,Analyzers" />
-			</group>
-			<group targetFramework=".netcoreapp2.1">
-				<dependency id="JetBrains.Annotations" version="10.3.0" exclude="Build,Analyzers" />
-				<dependency id="MiniProfiler.AspNetCore.Mvc" version="4.0.0" exclude="Build,Analyzers" />
-				<dependency id="System.Configuration.ConfigurationManager" version="4.7.0" exclude="Build,Analyzers" />
-				<dependency id="Microsoft.Data.SqlClient" version="2.1.2" exclude="Build,Analyzers" />
+				<dependency id="System.Configuration.ConfigurationManager" version="8.0.1" exclude="Build,Analyzers" />
+				<dependency id="Microsoft.Data.SqlClient" version="6.1.4" exclude="Build,Analyzers" />
 			</group>
 		</dependencies>
 	</metadata>
 	<files>
-		<file src="bin\$configuration$\net461\TypedDataLayer.dll" target="lib\net461\" />
-		<file src="bin\$configuration$\net461\TypedDataLayer.pdb" target="lib\net461\" />
-		<file src="bin\$configuration$\net461\TypedDataLayer.xml" target="lib\net461\" />
-		<file src="bin\$configuration$\netcoreapp2.1\TypedDataLayer.dll" target="lib\netcoreapp2.1\" />
-		<file src="bin\$configuration$\netcoreapp2.1\TypedDataLayer.pdb" target="lib\netcoreapp2.1\" />
-		<file src="bin\$configuration$\netcoreapp2.1\TypedDataLayer.xml" target="lib\netcoreapp2.1\" />
+		<file src="bin\$configuration$\net481\TypedDataLayer.dll" target="lib\net481\" />
+		<file src="bin\$configuration$\net481\TypedDataLayer.pdb" target="lib\net481\" />
+		<file src="bin\$configuration$\net481\TypedDataLayer.xml" target="lib\net481\" />
 		<file src="..\CommandRunner\bin\$configuration$\*" target="CommandRunner\" />
 		<file src="readme.txt" target="" />
 		<file src="..\CommandRunner\Package Manager Console\Commands.ps1" target="tools\Init.ps1" />
