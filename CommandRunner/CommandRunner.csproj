@@ -1,150 +1,49 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
-<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-    <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props"
-            Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
-    <PropertyGroup>
-        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-        <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-        <ProjectGuid>{A81039DF-DEF4-40B8-A770-6DD3450E0961}</ProjectGuid>
-        <OutputType>Exe</OutputType>
-        <AppDesignerFolder>Properties</AppDesignerFolder>
-        <RootNamespace>CommandRunner</RootNamespace>
-        <AssemblyName>CommandRunner</AssemblyName>
-        <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
-        <FileAlignment>512</FileAlignment>
-        <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-        <NuGetPackageImportStamp>
-        </NuGetPackageImportStamp>
-    </PropertyGroup>
-    <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
-        <PlatformTarget>x64</PlatformTarget>
-        <DebugSymbols>true</DebugSymbols>
-        <DebugType>full</DebugType>
-        <Optimize>false</Optimize>
-        <OutputPath>bin\Debug\</OutputPath>
-        <DefineConstants>DEBUG;TRACE</DefineConstants>
-        <ErrorReport>prompt</ErrorReport>
-        <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-    </PropertyGroup>
-    <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
-        <PlatformTarget>x64</PlatformTarget>
-        <DebugType>pdbonly</DebugType>
-        <Optimize>true</Optimize>
-        <OutputPath>bin\Release\</OutputPath>
-        <DefineConstants>TRACE</DefineConstants>
-        <ErrorReport>prompt</ErrorReport>
-        <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-    </PropertyGroup>
-    <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug-TypedDataLayer|x64'">
-        <DebugSymbols>true</DebugSymbols>
-        <OutputPath>bin\Debug\</OutputPath>
-        <DefineConstants>DEBUG;TRACE</DefineConstants>
-        <DebugType>full</DebugType>
-        <PlatformTarget>x64</PlatformTarget>
-        <ErrorReport>prompt</ErrorReport>
-        <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-        <Prefer32Bit>true</Prefer32Bit>
-    </PropertyGroup>
-    <ItemGroup>
-        <Reference Include="System" />
-        <Reference Include="System.ComponentModel" />
-        <Reference Include="System.ComponentModel.DataAnnotations" />
-        <Reference Include="System.Configuration" />
-        <Reference Include="System.Configuration.Install" />
-        <Reference Include="System.Core" />
-        <Reference Include="System.Data.OracleClient" />
-        <Reference Include="System.Drawing" />
-        <Reference Include="System.Drawing.Design" />
-        <Reference Include="System.Management" />
-        <Reference Include="System.Transactions" />
-        <Reference Include="System.Xml.Linq" />
-        <Reference Include="System.Data.DataSetExtensions" />
-        <Reference Include="Microsoft.CSharp" />
-        <Reference Include="System.Data" />
-        <Reference Include="System.Net.Http" />
-        <Reference Include="System.Xml" />
-    </ItemGroup>
-    <ItemGroup>
-        <Compile Include="CodeGeneration\CodeGenerationStatics.cs" />
-        <Compile Include="CodeGeneration\Column.cs" />
-        <Compile Include="CodeGeneration\Subsystems\CommandConditionStatics.cs" />
-        <Compile Include="CodeGeneration\Subsystems\ConfigurationRetrievalStatics.cs" />
-        <Compile Include="CodeGeneration\Subsystems\CustomModificationStatics.cs" />
-        <Compile Include="CodeGeneration\Subsystems\ProcedureStatics.cs" />
-        <Compile Include="CodeGeneration\Subsystems\QueryRetrievalStatics.cs" />
-        <Compile Include="CodeGeneration\Subsystems\RowConstantStatics.cs" />
-        <Compile Include="CodeGeneration\Subsystems\SequenceStatics.cs" />
-        <Compile Include="CodeGeneration\Subsystems\StandardModification\StandardModificationStatics.cs" />
-        <Compile Include="CodeGeneration\Subsystems\TableRetrievalStatics.cs" />
-        <Compile Include="CodeGeneration\TableColumns.cs" />
-        <Compile Include="CodeGeneration\TableConstantStatics.cs" />
-        <Compile Include="CodeGeneration\TypeNames.cs" />
-        <Compile Include="CodeGeneration\DataAccessStatics.cs" />
-        <Compile Include="Configuration\FileNames.cs" />
-        <Compile Include="DatabaseAbstraction\IDatabase.cs" />
-        <Compile Include="DatabaseAbstraction\DatabaseOps.cs" />
-        <Compile Include="DatabaseAbstraction\Databases\MySql.cs" />
-        <Compile Include="DatabaseAbstraction\Databases\NoDatabase.cs" />
-        <Compile Include="DatabaseAbstraction\Databases\Oracle.cs" />
-        <Compile Include="DatabaseAbstraction\Databases\SqlServer.cs" />
-        <Compile Include="DatabaseAbstraction\ProcedureParameter.cs" />
-        <Compile Include="DatabaseAbstraction\Table.cs" />
-        <Compile Include="DatabaseAbstraction\ValueContainer.cs" />
-        <Compile Include="Exceptions\UserCorrectableException.cs" />
-        <Compile Include="Operations\ExecuteDatabaseUpdatesScript.cs" />
-        <Compile Include="Operations\GenerateDatabaseAccessLogic.cs" />
-        <Compile Include="Tools\IoMethods.cs" />
-        <Compile Include="Collections\ListSet.cs" />
-        <Compile Include="Tools\Logger.cs" />
-        <Compile Include="Program.cs" />
-        <Compile Include="Properties\AssemblyInfo.cs" />
-        <Compile Include="XML Schemas\Partials\Database.cs" />
-        <Compile Include="XML Schemas\Partials\DatabaseConfiguration.cs" />
-        <Compile Include="XML Schemas\Partials\MySqlDatabase.cs" />
-        <Compile Include="XML Schemas\Partials\OracleDatabase.cs" />
-        <Compile Include="XML Schemas\Partials\SqlServerDatabase.cs" />
-        <Compile Include="XML Schemas\TypedDataLayerConfig.cs">
-            <DependentUpon>TypedDataLayerConfig.xsd</DependentUpon>
-        </Compile>
-    </ItemGroup>
-    <ItemGroup>
-        <None Include="App.config" />
-        <None Include="Package Manager Console\Commands.ps1" />
-        <None Include="XML Schemas\GenerateSchemaClasses.bat" />
-        <None Include="XML Schemas\TypedDataLayerConfig.xsd">
-            <SubType>Designer</SubType>
-        </None>
-    </ItemGroup>
-    <ItemGroup>
-        <ProjectReference Include="..\TypedDataLayer\TypedDataLayer.csproj">
-            <Project>{86a9c472-70ea-4dd1-b36e-5276c754e720}</Project>
-            <Name>TypedDataLayer</Name>
-        </ProjectReference>
-    </ItemGroup>
-    <ItemGroup>
-        <None Include="XML Schemas\Examples\TypedDataLayerConfig.xml" />
-    </ItemGroup>
-    <ItemGroup>
-        <PackageReference Include="JetBrains.Annotations">
-            <Version>2019.1.1</Version>
-        </PackageReference>
-        <PackageReference Include="Microsoft.Data.SqlClient">
-            <Version>6.1.4</Version>
-        </PackageReference>
-        <PackageReference Include="Microsoft.SqlServer.SqlManagementObjects">
-            <Version>172.87.0</Version>
-        </PackageReference>
-        <PackageReference Include="MySql.Data">
-            <Version>8.0.16</Version>
-        </PackageReference>
-    </ItemGroup>
-    <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-    <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
+	<PropertyGroup>
+		<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+		<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+		<OutputType>Exe</OutputType>
+		<RootNamespace>CommandRunner</RootNamespace>
+		<AssemblyName>CommandRunner</AssemblyName>
+		<TargetFramework>net481</TargetFramework>
+		<FileAlignment>512</FileAlignment>
+		<AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+		<Deterministic>false</Deterministic>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Reference Include="System.ComponentModel" />
+		<Reference Include="System.ComponentModel.DataAnnotations" />
+		<Reference Include="System.Configuration" />
+		<Reference Include="System.Configuration.Install" />
+		<Reference Include="System.Data.OracleClient" />
+		<Reference Include="System.Drawing" />
+		<Reference Include="System.Drawing.Design" />
+		<Reference Include="System.Management" />
+		<Reference Include="System.Net.Http" />
+		<Reference Include="System.Transactions" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Update="XML Schemas\TypedDataLayerConfig.cs">
+			<DependentUpon>TypedDataLayerConfig.xsd</DependentUpon>
+		</Compile>
+		<None Update="XML Schemas\TypedDataLayerConfig.xsd">
+			<SubType>Designer</SubType>
+		</None>
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\TypedDataLayer\TypedDataLayer.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="JetBrains.Annotations" Version="2019.1.1" />
+		<PackageReference Include="Microsoft.Data.SqlClient" Version="6.1.4" />
+		<PackageReference Include="Microsoft.SqlServer.SqlManagementObjects" Version="172.87.0" />
+		<PackageReference Include="MySql.Data" Version="8.0.16" />
+	</ItemGroup>
+
 </Project>
