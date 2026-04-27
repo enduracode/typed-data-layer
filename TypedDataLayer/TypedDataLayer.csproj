@@ -6,9 +6,9 @@
 
 	<PropertyGroup>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
-		<Version>1.0.0</Version>
-		<AssemblyVersion>6.0.0.0</AssemblyVersion>
-		<FileVersion>6.0.0.0</FileVersion>
+		<Version>6.0.1</Version>
+		<AssemblyVersion>6.0.1.0</AssemblyVersion>
+		<FileVersion>6.0.1.0</FileVersion>
 		<Copyright>Copyright © Sam Rueby, William Gross, Greg Smalter 2019</Copyright>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<Description>A simple statically-typed DAL.</Description>
@@ -19,7 +19,7 @@
 	<ItemGroup>
 		<PackageReference Include="JetBrains.Annotations" Version="10.3.0" />
 		<PackageReference Include="Microsoft.Data.SqlClient" Version="6.1.4" />
-		<PackageReference Include="MiniProfiler.AspNetCore.Mvc" Version="4.0.0" />
+		<PackageReference Include="MiniProfiler.Shared" Version="4.0.0" />
 		<PackageReference Include="System.Configuration.ConfigurationManager" Version="8.0.1" />
 	</ItemGroup>
 

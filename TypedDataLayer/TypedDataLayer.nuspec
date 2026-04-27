@@ -2,7 +2,7 @@
 <package>
 	<metadata>
 		<id>TypedDataLayer</id>
-		<version>120.0.0.0</version>
+		<version>6.0.1</version>
 		<title>TypedDataLayer</title>
 		<authors>Sam Rueby, William Gross, Greg Smalter</authors>
 		<owners>Sam Rueby</owners>
@@ -15,6 +15,7 @@
 		<dependencies>
 			<group targetFramework=".NETFramework4.8.1">
 				<dependency id="JetBrains.Annotations" version="10.3.0" exclude="Build,Analyzers" />
+				<dependency id="MiniProfiler.Shared" version="4.0.0" exclude="Build,Analyzers" />
 				<dependency id="System.Configuration.ConfigurationManager" version="8.0.1" exclude="Build,Analyzers" />
 				<dependency id="Microsoft.Data.SqlClient" version="6.1.4" exclude="Build,Analyzers" />
 			</group>
@@ -24,7 +25,7 @@
 		<file src="bin\$configuration$\net481\TypedDataLayer.dll" target="lib\net481\" />
 		<file src="bin\$configuration$\net481\TypedDataLayer.pdb" target="lib\net481\" />
 		<file src="bin\$configuration$\net481\TypedDataLayer.xml" target="lib\net481\" />
-		<file src="..\CommandRunner\bin\$configuration$\*" target="CommandRunner\" />
+		<file src="..\CommandRunner\bin\$configuration$\net481\*" target="CommandRunner\" />
 		<file src="readme.txt" target="" />
 		<file src="..\CommandRunner\Package Manager Console\Commands.ps1" target="tools\Init.ps1" />
 	</files>
